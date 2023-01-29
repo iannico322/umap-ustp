@@ -1,6 +1,7 @@
-import {useState} from 'react'
+import {useState} from 'react' 
 import './loader.css'
 import './load.css'
+//'loader ni siya
 
  export const Load = (props) => {
     const [load, setLoad] = useState("loader-screen show")
