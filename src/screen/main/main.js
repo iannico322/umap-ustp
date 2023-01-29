@@ -84,8 +84,6 @@ function MainDasboard() {
       settimer(9000)
       setInterval(displayDateTime,timer );
     }
-    
-    
   });
 
   function getEvent() {

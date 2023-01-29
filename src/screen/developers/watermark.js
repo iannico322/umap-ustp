@@ -7,7 +7,7 @@ const WaterMark = () => {
         <code>Develop by: <div> <span className='glitch' class="glitch" data-text="College Chettah"  onClick={() => {
                   document.querySelector(".devs").click();
                 }}>COLLEGE CHEETAH </span><span className='gdsc'> | GDSC</span>  </div></code>
-    <Link to="/devs" className="devs" target="_blank"></Link>
+    <Link to="/devs" className="devs"></Link>
     </div>
   )
 }

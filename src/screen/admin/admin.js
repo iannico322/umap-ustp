@@ -465,8 +465,7 @@ export const Admin = ({navigation}) => {
                           <td>{user.UserType}</td>
                           <td className="table-actions">
                             <button
-                              class="button-6"
-                              role="button"
+                              className="button-6"
                               onClick={() => {
                                 acceptUser(user.ID);
                               }}
@@ -501,12 +500,10 @@ export const Admin = ({navigation}) => {
                           <td>{user.FullName}</td>
                           <td>{user.Email}</td>
                           <td>{user.password}</td>
-
                           <td>{user.UserType}</td>
                           <td className="table-actions">
                             <button
-                              class="button-6"
-                              role="button"
+                              className="button-6"
                               onClick={() => {
                                 banUser(user.ID);
                               }}
@@ -515,8 +512,7 @@ export const Admin = ({navigation}) => {
                             </button>
 
                             <button
-                              class="button-6"
-                              role="button"
+                              className="button-6"
                               onClick={() => {
                                 acceptUser(user.ID);
                               }}
@@ -610,8 +606,8 @@ export const Admin = ({navigation}) => {
                       </td>
                       <td className="table-actions">
                         <button
-                          class="button-6"
-                          role="button"
+                          className="button-6"
+                          
                           onClick={() => {
                             const url = "http://localhost/umap-server/addRoom.php";
                             
@@ -637,8 +633,8 @@ export const Admin = ({navigation}) => {
 
 
                         <button
-                          class="button-6"
-                          role="button"
+                          className="button-6"
+                          
                           onClick={() => {
                             
                               const url = "http://localhost/umap-server/updateRoom.php";
@@ -671,8 +667,8 @@ export const Admin = ({navigation}) => {
 
 
                         <button
-                          class="button-6"
-                          role="button"
+                          className="button-6"
+                          
                           onClick={() => {
                             
                            
@@ -717,8 +713,8 @@ export const Admin = ({navigation}) => {
                         <td>{room.roomType}</td>
                         <td className="table-actions">
                           <button
-                            class="button-6"
-                            role="button"
+                            className="button-6"
+                            
                             onClick={() => {
                               setroomIDs( ["Editing room:", room.roomID])
 
@@ -733,8 +729,8 @@ export const Admin = ({navigation}) => {
                           </button>
 
                           <button
-                            class="button-6"
-                            role="button"
+                            className="button-6"
+                            
                             onClick={() => {
                               removeRomve(room.roomID)
                             }}

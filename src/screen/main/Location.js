@@ -6,7 +6,7 @@ import { useRef, useState } from "react";
 export function Location(props) {
   const gltf = useLoader(
     GLTFLoader,
-    process.env.PUBLIC_URL + "/models/location.gltf"
+    process.env.PUBLIC_URL + "/models/location.glb"
   );
 
   const [title, setTitle] = useState("");
@@ -15,7 +15,6 @@ export function Location(props) {
   const direction = useRef(null);
 
   useFrame((state) => {
-    
     setTitle(props.roomSearch);
 
     switch (props.search) {
@@ -167,7 +166,6 @@ export function Location(props) {
         break;
 
       default:
-        
         direction.current.position.x = 33;
         direction.current.position.y = 0;
         direction.current.position.z = -46;
@@ -227,7 +225,6 @@ export function Location(props) {
           </Text3D>
         </Float>
       </Float>
-
       <primitive object={gltf.scene} rotation={[0, 0.2, 0]} scale={[5, 5, 5]} />
     </Float>
   );
