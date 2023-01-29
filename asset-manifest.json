@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/umap-ustp/static/css/main.a3ba1677.css",
-    "main.js": "/umap-ustp/static/js/main.3c1c6a79.js",
+    "main.js": "/umap-ustp/static/js/main.a179e66b.js",
     "static/js/787.fe5dcdae.chunk.js": "/umap-ustp/static/js/787.fe5dcdae.chunk.js",
     "static/media/2dmapc.jpg": "/umap-ustp/static/media/2dmapc.78e8fea10ecfc74ddb63.jpg",
     "static/media/map3d_2.png": "/umap-ustp/static/media/map3d_2.1450140e87ccd508a60d.png",
@@ -28,11 +28,11 @@
     "static/media/arrow_forward.svg": "/umap-ustp/static/media/arrow_forward.34aa7fcb3ffec8cfbf9136422e9bed25.svg",
     "static/media/arrow_back.svg": "/umap-ustp/static/media/arrow_back.7f971537cfda8f1cde69e94817dee4b7.svg",
     "main.a3ba1677.css.map": "/umap-ustp/static/css/main.a3ba1677.css.map",
-    "main.3c1c6a79.js.map": "/umap-ustp/static/js/main.3c1c6a79.js.map",
+    "main.a179e66b.js.map": "/umap-ustp/static/js/main.a179e66b.js.map",
     "787.fe5dcdae.chunk.js.map": "/umap-ustp/static/js/787.fe5dcdae.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a3ba1677.css",
-    "static/js/main.3c1c6a79.js"
+    "static/js/main.a179e66b.js"
   ]
 }
