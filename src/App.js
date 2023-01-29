@@ -22,7 +22,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/umap-web" element={<Navigate replace to="/umap" />} />
+        <Route path="/umap-ustp" element={<Navigate replace to="/umap" />} />
         <Route path="/umap" element={<Welcome />} />
         <Route path="devs" element={<Developers />} />
         <Route path="login" element={<Login />} />

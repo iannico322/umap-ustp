@@ -8,16 +8,14 @@ import { Search2 } from "../../components/search/search2";
 import "./admin.css";
 import "./button6.css";
 import { Link } from "react-router-dom";
-import Button from '@mui/material/Button';
-import {  useDispatch,useSelector  } from 'react-redux';
+import Button from "@mui/material/Button";
+import { useDispatch, useSelector } from "react-redux";
 import { rooms } from "../../cache/umapRoom";
 
-export const Admin = ({navigation}) => {
-
-  const roomses = useSelector(rooms)
+export const Admin = ({ navigation }) => {
+  const roomses = useSelector(rooms);
   const [room, setRoom] = useState("");
-  const [roomIDs, setroomIDs] = useState(["",""]);
-
+  const [roomIDs, setroomIDs] = useState(["", ""]);
 
   const [title, setTitle] = useState("");
   const [clicked, setclicked] = useState(true);
@@ -28,29 +26,26 @@ export const Admin = ({navigation}) => {
   const [events, setEvents] = useState([]);
   const [users, setUsers] = useState([]);
   const [roomdb, setroomdb] = useState([]);
-  
+
   const [roomName, setroomName] = useState("");
   const [buildingNumber, setbuildingNumber] = useState("");
   const [floorNumber, setfloorNumber] = useState("");
   const [blockNumber, setblockNumber] = useState("");
   const [roomType, setroomType] = useState("");
- 
 
-
-
-
-
-
-  const [EventChoice,setEventChoice] = useState(["table-box-hide",""])
-  const [UserChoice,setUserChoice] =useState(["table-box-hide",""])
-  const [UserRequestChoice,setUserRequestChoice] = useState(["table-box","active-option"])
-  const [GenerateReport,setGenerateReport] = useState(["table-box-hide",""])
-  const [RoomGUI,setRoomGUI] = useState(["table-box-hide",""])
+  const [EventChoice, setEventChoice] = useState(["table-box-hide", ""]);
+  const [UserChoice, setUserChoice] = useState(["table-box-hide", ""]);
+  const [UserRequestChoice, setUserRequestChoice] = useState([
+    "table-box",
+    "active-option",
+  ]);
+  const [GenerateReport, setGenerateReport] = useState(["table-box-hide", ""]);
+  const [RoomGUI, setRoomGUI] = useState(["table-box-hide", ""]);
 
   useEffect(() => {
     getEvent();
     getUsers();
-    getRoomsAdmin()
+    getRoomsAdmin();
     console.log(events);
     console.log(users);
   }, []);
@@ -70,10 +65,6 @@ export const Admin = ({navigation}) => {
         setUsers(response.data);
       });
   }
-
- 
-
-
 
   function convertTimeFormat(time) {
     let hours = parseInt(time.split(":")[0]);
@@ -129,7 +120,6 @@ export const Admin = ({navigation}) => {
       });
   }
 
-
   function getRoomsAdmin() {
     axios
       .get("http://localhost/umap-server/getRoomsAdmin.php")
@@ -138,8 +128,8 @@ export const Admin = ({navigation}) => {
       });
   }
   function removeRomve(roomid) {
-    console.log(roomid)
-    console.log(typeof roomid)
+    console.log(roomid);
+    console.log(typeof roomid);
     let fData = new FormData();
     fData.append("roomID", roomid);
     axios
@@ -198,58 +188,51 @@ export const Admin = ({navigation}) => {
     return `${months[month - 1]} ${day}`;
   };
 
-
-  const pageChoice = (e)=>{
-      switch (e) {
-        case 0:
-          setEventChoice(["table-box","active-option"])
-          setUserChoice(["table-box-hide",""])
-          setUserRequestChoice(["table-box-hide",""])
-          setGenerateReport(["table-box-hide",""])
-          setRoomGUI(["table-box-hide",""])
-          break;
-
-        case 1:
-          setEventChoice(["table-box-hide",""] )
-          setUserChoice(["table-box","active-option"])
-          setUserRequestChoice(["table-box-hide",""])
-          setGenerateReport(["table-box-hide",""])
-          setRoomGUI(["table-box-hide",""])
-          break;
-
-        case 2:
-          setEventChoice(["table-box-hide",""])
-          setUserChoice(["table-box-hide",""])
-          setUserRequestChoice(["table-box","active-option"])
-          console.log(UserRequestChoice[1])
-          setGenerateReport(["table-box-hide",""])
-          setRoomGUI(["table-box-hide",""])
-          break;
-        case 3:
-        setEventChoice(["table-box-hide",""])
-        setUserChoice(["table-box-hide",""])
-        setUserRequestChoice(["table-box-hide",""])
-        setGenerateReport(["table-box","active-option"])
-        setRoomGUI(["table-box-hide",""])
+  const pageChoice = (e) => {
+    switch (e) {
+      case 0:
+        setEventChoice(["table-box", "active-option"]);
+        setUserChoice(["table-box-hide", ""]);
+        setUserRequestChoice(["table-box-hide", ""]);
+        setGenerateReport(["table-box-hide", ""]);
+        setRoomGUI(["table-box-hide", ""]);
         break;
-        case 4:
-        setEventChoice(["table-box-hide",""])
-        setUserChoice(["table-box-hide",""])
-        setUserRequestChoice(["table-box-hide",""])
-        setGenerateReport(["table-box-hide",""])
-        setRoomGUI(["table-box","active-option"])
+
+      case 1:
+        setEventChoice(["table-box-hide", ""]);
+        setUserChoice(["table-box", "active-option"]);
+        setUserRequestChoice(["table-box-hide", ""]);
+        setGenerateReport(["table-box-hide", ""]);
+        setRoomGUI(["table-box-hide", ""]);
         break;
-      
-        default:
-          break;
-      }
-  }
 
+      case 2:
+        setEventChoice(["table-box-hide", ""]);
+        setUserChoice(["table-box-hide", ""]);
+        setUserRequestChoice(["table-box", "active-option"]);
+        console.log(UserRequestChoice[1]);
+        setGenerateReport(["table-box-hide", ""]);
+        setRoomGUI(["table-box-hide", ""]);
+        break;
+      case 3:
+        setEventChoice(["table-box-hide", ""]);
+        setUserChoice(["table-box-hide", ""]);
+        setUserRequestChoice(["table-box-hide", ""]);
+        setGenerateReport(["table-box", "active-option"]);
+        setRoomGUI(["table-box-hide", ""]);
+        break;
+      case 4:
+        setEventChoice(["table-box-hide", ""]);
+        setUserChoice(["table-box-hide", ""]);
+        setUserRequestChoice(["table-box-hide", ""]);
+        setGenerateReport(["table-box-hide", ""]);
+        setRoomGUI(["table-box", "active-option"]);
+        break;
 
-
-
-
-
+      default:
+        break;
+    }
+  };
 
   return (
     <>
@@ -478,7 +461,6 @@ export const Admin = ({navigation}) => {
                     ))}
                 </table>
               </div>
-
               <div className={`${UserChoice[0]} table2 `}>
                 <table>
                   <thead>
@@ -527,18 +509,22 @@ export const Admin = ({navigation}) => {
               </div>
 
               <div className={`${GenerateReport[0]} table3 `}>
-                <Button variant="outlined"
-                onClick={() => {
-                  document.querySelector(".reportDay").click();
-                }}
-                
-                >daily Report</Button>
-                <Button variant="outlined"
-                onClick={() => {
-                  document.querySelector(".reportWeek").click();
-                }}
-                
-                >weekly Report</Button>
+                <Button
+                  variant="outlined"
+                  onClick={() => {
+                    document.querySelector(".reportDay").click();
+                  }}
+                >
+                  daily Report
+                </Button>
+                <Button
+                  variant="outlined"
+                  onClick={() => {
+                    document.querySelector(".reportWeek").click();
+                  }}
+                >
+                  weekly Report
+                </Button>
 
                 <Button
                   variant="contained"
@@ -554,7 +540,9 @@ export const Admin = ({navigation}) => {
                 className={`${RoomGUI[0]} table3 `}
                 style={{ flexDirection: "column" }}
               >
-                <h2 style={{margin:0,color:"#FDB417"}}>{`${roomIDs[0] } ${roomIDs[1] }`}</h2>
+                <h2
+                  style={{ margin: 0, color: "#FDB417" }}
+                >{`${roomIDs[0]} ${roomIDs[1]}`}</h2>
                 <table>
                   <thead>
                     <tr>
@@ -567,120 +555,126 @@ export const Admin = ({navigation}) => {
                     </tr>
                   </thead>
                   <tbody>
-                    
                     <tr>
                       <td>
-                        <input type="text" value={roomName} onChange={
-                          (e)=>{
-                            setroomName(e.target.value)
-                          }
-                          } placeholder="Room Name" />{" "}
+                        <input
+                          type="text"
+                          value={roomName}
+                          onChange={(e) => {
+                            setroomName(e.target.value);
+                          }}
+                          placeholder="Room Name"
+                        />{" "}
                       </td>
                       <td>
-                        <input type="text"  value={buildingNumber} onChange={
-                          (e)=>{
-                            setbuildingNumber(e.target.value)
-                          }
-                        } placeholder="Building Number On" />{" "}
+                        <input
+                          type="text"
+                          value={buildingNumber}
+                          onChange={(e) => {
+                            setbuildingNumber(e.target.value);
+                          }}
+                          placeholder="Building Number On"
+                        />{" "}
                       </td>
                       <td>
-                        <input type="text"  value={floorNumber} onChange={
-                          (e)=>{
-                            setfloorNumber(e.target.value)
-                          }
-                        }  placeholder="Floor" />{" "}
+                        <input
+                          type="text"
+                          value={floorNumber}
+                          onChange={(e) => {
+                            setfloorNumber(e.target.value);
+                          }}
+                          placeholder="Floor"
+                        />{" "}
                       </td>
                       <td>
-                        <input type="text" value={blockNumber} onChange={
-                          (e)=>{
-                            setblockNumber(e.target.value)
-                          }
-                        }  placeholder="Block" />{" "}
+                        <input
+                          type="text"
+                          value={blockNumber}
+                          onChange={(e) => {
+                            setblockNumber(e.target.value);
+                          }}
+                          placeholder="Block"
+                        />{" "}
                       </td>
                       <td>
-                        <input type="text" value={roomType} onChange={
-                          (e)=>{
-                            setroomType(e.target.value)
-                          }
-                        }   placeholder="Type" />{" "}
+                        <input
+                          type="text"
+                          value={roomType}
+                          onChange={(e) => {
+                            setroomType(e.target.value);
+                          }}
+                          placeholder="Type"
+                        />{" "}
                       </td>
                       <td className="table-actions">
                         <button
                           className="button-6"
-                          
                           onClick={() => {
-                            const url = "http://localhost/umap-server/addRoom.php";
-                            
-                              let fData = new FormData();
-                              
-                              fData.append("roomName", `${roomName}`);
-                              fData.append("buildingNumber", `${buildingNumber}`);
-                              fData.append("floorNumber", `${floorNumber}`);
-                              fData.append("blockNumber", `${blockNumber}`);
-                              fData.append("roomType", `${roomType}`);
-                              axios
-                                .post(url, fData).then(()=>{
-                                  setroomName("")
-                                  setbuildingNumber("")
-                                  setfloorNumber("")
-                                  setblockNumber("")
-                                  setroomType("")
-                                })
+                            const url =
+                              "http://localhost/umap-server/addRoom.php";
+
+                            let fData = new FormData();
+
+                            fData.append("roomName", `${roomName}`);
+                            fData.append("buildingNumber", `${buildingNumber}`);
+                            fData.append("floorNumber", `${floorNumber}`);
+                            fData.append("blockNumber", `${blockNumber}`);
+                            fData.append("roomType", `${roomType}`);
+                            axios.post(url, fData).then(() => {
+                              setroomName("");
+                              setbuildingNumber("");
+                              setfloorNumber("");
+                              setblockNumber("");
+                              setroomType("");
+                            });
                           }}
                         >
                           Add
                         </button>
 
-
                         <button
                           className="button-6"
-                          
                           onClick={() => {
-                            
-                              const url = "http://localhost/umap-server/updateRoom.php";
-                              
-                              if(roomIDs[1]!=""){
-                                  let fData = new FormData();
-                                  fData.append("roomID",roomIDs[1])
-                                  fData.append("roomName", `${roomName}`);
-                                  fData.append("buildingNumber", `${buildingNumber}`);
-                                  fData.append("floorNumber", `${floorNumber}`);
-                                  fData.append("blockNumber", `${blockNumber}`);
-                                  fData.append("roomType", `${roomType}`);
-                                  axios
-                                    .post(url, fData).then(()=>{
-                                      setroomName("")
-                                      setbuildingNumber("")
-                                      setfloorNumber("")
-                                      setblockNumber("")
-                                      setroomType("")
-                                      setroomIDs( ["", ""])
-                                      window.location.reload();
-                                    })
-                              }else{
-                                alert("Please Select a room to update!")
-                              }
+                            const url =
+                              "http://localhost/umap-server/updateRoom.php";
+
+                            if (roomIDs[1] != "") {
+                              let fData = new FormData();
+                              fData.append("roomID", roomIDs[1]);
+                              fData.append("roomName", `${roomName}`);
+                              fData.append(
+                                "buildingNumber",
+                                `${buildingNumber}`
+                              );
+                              fData.append("floorNumber", `${floorNumber}`);
+                              fData.append("blockNumber", `${blockNumber}`);
+                              fData.append("roomType", `${roomType}`);
+                              axios.post(url, fData).then(() => {
+                                setroomName("");
+                                setbuildingNumber("");
+                                setfloorNumber("");
+                                setblockNumber("");
+                                setroomType("");
+                                setroomIDs(["", ""]);
+                                window.location.reload();
+                              });
+                            } else {
+                              alert("Please Select a room to update!");
+                            }
                           }}
                         >
                           Update
                         </button>
 
-
                         <button
                           className="button-6"
-                          
                           onClick={() => {
-                            
-                           
-                                  
-                               
-                                  setroomName("")
-                                  setbuildingNumber("")
-                                  setfloorNumber("")
-                                  setblockNumber("")
-                                  setroomType("")
-                                  setroomIDs( ["", ""])
-                                
+                            setroomName("");
+                            setbuildingNumber("");
+                            setfloorNumber("");
+                            setblockNumber("");
+                            setroomType("");
+                            setroomIDs(["", ""]);
                           }}
                         >
                           Clear
@@ -714,15 +708,14 @@ export const Admin = ({navigation}) => {
                         <td className="table-actions">
                           <button
                             className="button-6"
-                            
                             onClick={() => {
-                              setroomIDs( ["Editing room:", room.roomID])
+                              setroomIDs(["Editing room:", room.roomID]);
 
-                              setroomName(room.roomName)
-                              setbuildingNumber(room.buildingNumber)
-                              setfloorNumber(room.floorNumber)
-                              setblockNumber(room.blockNumber)
-                              setroomType(room.roomType)
+                              setroomName(room.roomName);
+                              setbuildingNumber(room.buildingNumber);
+                              setfloorNumber(room.floorNumber);
+                              setblockNumber(room.blockNumber);
+                              setroomType(room.roomType);
                             }}
                           >
                             Edit
@@ -730,9 +723,8 @@ export const Admin = ({navigation}) => {
 
                           <button
                             className="button-6"
-                            
                             onClick={() => {
-                              removeRomve(room.roomID)
+                              removeRomve(room.roomID);
                             }}
                           >
                             Delete
