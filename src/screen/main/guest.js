@@ -22,7 +22,7 @@ import { searchs } from "../../cache/userSearch";
 import { SearchOffline } from "../../components/search/searchForOffline";
 function Guest() {
   const searches = useSelector(searchs);
-  const [mapzoom, setmapzoom] = useState(40);
+  const [mapzoom, setmapzoom] = useState(25);
 
   return (
     <>
