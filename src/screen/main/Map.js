@@ -14,4 +14,3 @@ export function Map() {
     /> 
   )
 }
-{/* <view>asd</view> */}

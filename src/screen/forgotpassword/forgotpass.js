@@ -41,7 +41,7 @@ export const Forgotpass = () => {
         if (response.data === "Login") {
           // setUsername("");
           // setPassword("");
-          // <view>asd</view>
+          
         
           setAlert("");
           const url = "http://localhost/umap-server/loginCredentials.php";
