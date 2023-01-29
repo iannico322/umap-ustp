@@ -231,7 +231,7 @@ export const Profile = () => {
             </div>
             {schedules.map((sched, key) => (
               
-              
+              // For redirecting the map
               <div key={key}
                 className="card"
                 onClick={() => {
