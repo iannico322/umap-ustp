@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 77827b170b2ffe6cb3c69824c890b51d4c67fdf9
 import { useState, useEffect } from "react";
 
 import { Input } from "../../components/input/input";
