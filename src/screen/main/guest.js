@@ -10,6 +10,7 @@ import { Map } from "./Map";
 import { Navbar3 } from "../../components/navbar/navbar3";
 import { Location } from "./Location";
 
+//Guest
 import Map2d from "./../../media/image/2dmapc.jpg";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Cloud1 from "./../../media/image/cloud_2-big.png";
