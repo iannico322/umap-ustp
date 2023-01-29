@@ -76,7 +76,7 @@ function Guest() {
             <PerspectiveCamera
               makeDefault
               fov={mapzoom}
-              position={[400, 0, -5]}
+              position={[400, 100, -5]}
             />
 
             <OrbitControls target={[0, 0, 10]} maxPolarAngle={Math.PI * 0.4} />
