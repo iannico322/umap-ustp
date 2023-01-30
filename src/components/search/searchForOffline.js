@@ -155,7 +155,7 @@ export const SearchOffline = (props) => {
               );
             }}
             onMouseOut={handleHoverOut}
-          ></li>
+          >{suggestion.roomName}</li>
         ))}
       </ul>
     </div>
